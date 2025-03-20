@@ -55,12 +55,10 @@ Free and open source, powerful network-wide ads and trackers blocking DNS server
 endef
 
 define Build/Compile
-	( \
-		pushd $(PKG_BUILD_DIR) ; \
-		make js-deps js-build ; \
-		popd ; \
-		$(call GoPackage/Build/Compile) ; \
-	)
+	pushd $(PKG_BUILD_DIR) && \
+	make js-deps js-build && \
+	popd && \
+	$(call GoPackage/Build/Compile)
 endef
 
 define Package/adguardhome/install
