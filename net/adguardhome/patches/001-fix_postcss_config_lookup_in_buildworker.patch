@@ -1,0 +1,14 @@
+--- a/client/webpack.common.js
++++ b/client/webpack.common.js
+@@ -63,6 +63,11 @@ const config = {
+                     },
+                     {
+                         loader: 'postcss-loader',
++                        options: {
++                            postcssOptions: {
++                                config: false,
++                            },
++                        },
+                     },
+                 ],
+             },
